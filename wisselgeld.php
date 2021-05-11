@@ -1,11 +1,11 @@
 <?php
 $input = $argv[1];
 if(!isset($input)) {
-    echo("Je hebt niets ingevoert.");
+    echo("No input.");
     exit();
 }
 elseif(!is_numeric($input)) {
-    echo("Dit is geen getal.");
+    echo("Not a number.");
     exit();
 }
 define("CENT", array(0.50, 0.20, 0.10, 0.05));
@@ -19,7 +19,7 @@ foreach(GELDEENHEDEN as $geldeenheid) {
     $output = $restbedrag / $geldeenheid;
     $hoeveelheidGeldeenheid = floor($output);
     if($hoeveelheidGeldeenheid != 0) {
-        echo("Je krijgt ".$hoeveelheidGeldeenheid." van ".$geldeenheid." euro terug." .PHP_EOL);
+        echo("You get ".$hoeveelheidGeldeenheid." of the ".$geldeenheid." euros back." .PHP_EOL);
     }
     $nieuwbedrag = $restbedrag - $hoeveelheidGeldeenheid * $geldeenheid;
     $restbedrag = $nieuwbedrag;
@@ -32,7 +32,7 @@ foreach(CENT as $geldeenheid) {
     $output = $restbedrag / $geldeenheid;
     $hoeveelheidGeldeenheid = floor($output);
     if($hoeveelheidGeldeenheid != 0) {
-        echo("Je krijgt ".$hoeveelheidGeldeenheid." van ".($geldeenheid * 100)." cent terug." .PHP_EOL);
+        echo("You get ".$hoeveelheidGeldeenheid." of the ".($geldeenheid * 100)." cents back." .PHP_EOL);
     }
     $nieuwbedrag = $restbedrag - $hoeveelheidGeldeenheid * $geldeenheid;
     $restbedrag = $nieuwbedrag;
